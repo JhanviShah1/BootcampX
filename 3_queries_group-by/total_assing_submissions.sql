@@ -1,9 +1,6 @@
-SELECT cohorts.name AS cohort
-FROM cohorts
-SUM(assignment_submissions.*)as total_submissions
-JOIN students ON 
-students.id = student_id
-JOIN cohort ON 
-cohort.id = assignments_submissins.id
+SELECT cohorts.name as cohort, count(assignment_submissions.*) as total_submissions
+FROM assignment_submissions
+JOIN students ON students.id = student_id
+JOIN cohorts ON cohorts.id = cohort_id
 GROUP BY cohorts.name
-ORDER BY total_submissions;
+ORDER BY total_submissions DESC;

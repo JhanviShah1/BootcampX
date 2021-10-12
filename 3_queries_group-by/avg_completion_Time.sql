@@ -6,3 +6,4 @@ WHERE end_date IS NULL
 GROUP BY student
 ORDER BY average_assignment_duration DESC;
 
+-- \i 3_queries_group-by/AVG_COMPLETION_TIME.sql
